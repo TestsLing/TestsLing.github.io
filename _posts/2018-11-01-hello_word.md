@@ -46,11 +46,11 @@ tags:
 
 配置的过程中也没遇到什么坑，基本就是 Git 的流程，相当顺手
 
-大的 Jekyll 主题上直接 fork 了 Hux Blog
+Jekyll 主题直接 fork 了 Hux Blog
 
 本地调试环境需要 `gem install jekyll`，结果 rubygem 的源居然被墙了……后来手动改成了我大淘宝的镜像源才成功
 
-Theme 的 CSS 是基于 Bootstrap 定制的，看得不爽的地方直接在 Less 里改就好了（平时更习惯 SCSS 些），**不过其实我一直觉得 Bootstrap 在移动端的体验做得相当一般，比我在淘宝参与的团队 CSS 框架差多了……**所以为了体验，也补了不少 CSS 进去
+Theme 的 CSS 是基于 Bootstrap 定制的，看得不爽的地方直接在 Less 里改就好了（平时更习惯 SCSS 些）
 
 
 
