@@ -1,8 +1,9 @@
----
+<!-- ---
 layout:     keynote
 title:      "JavaScript 模块化七日谈"
 subtitle:   "🎞  Slides:JavaScript Modularization Journey"
-iframe:     "//huangxuan.me/js-module-7day/"
+iframe:     "//baidu.com"
+# header-img: "img/post-bg-2015.jpg"
 date:       2015-07-09
 author:     "Hux"
 tags:
@@ -42,4 +43,4 @@ tags:
 
 ### Thanks
 
-[Reveal.js](http://lab.hakim.se/reveal-js)
+[Reveal.js](http://lab.hakim.se/reveal-js) -->

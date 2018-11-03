@@ -1,0 +1,153 @@
+---
+layout:     post
+title:      "SASS简单入门"
+subtitle:   "原来还可以这么写CSS"
+date:       2018-11-02 14:00:00
+author:     "憧憬"
+header-img: "img/post-bg-re-vs-ng2.jpg"
+header-mask: 0.3
+catalog:    true
+tags:
+  - CSS
+---
+#### 混合样式
+
+```
+@mixin block($el){
+    color:$el
+}
+.demo{
+    @include block(red);
+    // 相当于把它的样式拿过来
+}
+可以配合@content用法
+@mixin max-screen($res){
+  @media only screen and (max-width: $res) {
+    @content;  // 放的是自己的样式 当声明@content时 里面的东西是引用mixin的内容
+  }
+}
+@mixin可以用=表示，而@include可以用+表示 当@content在指令中出现多次或者在循环中时	额外的代码将被导入到每一个地方
+```
+
+#### 引入scss
+
+```
+一般的公共文件是以下划线开头 如:_common.scss  导入时使用 @import "common" 无需后缀名和下划线
+@import "item"; 就相当于把他所有内容拿过来
+```
+
+#### 继承
+
+```
+// 普通继承   当节点使用继承后 该节点会和继承的节点共享样式 .dvs,.demo{样式},自己单独拥有的样式 会另外开一个代码块存放
+// 占位继承   当不想显示父节点的样式编译结果时 使用 在名字前加 单独的样式还是单独的一个代码块 继承的是一个代码块 多个继承还是一样写一块
+%f{
+  width: 100px;
+  max-height: 1000px;
+}
+.dvs{
+  @extend %f;
+  max-height: 100px;
+}
+```
+
+#### 函数
+
+```
+函数是通过@function定义一个函数实现加减乘除的逻辑算法 并通过@return返回
+@baseFontSize:16px !default;
+@function pxToRem($num){
+    @return $num / $baseFontSize * 1rem;
+}
+.demo{
+    font-size:$baseFontSize;
+}
+.demo1{
+    font-size:pxToRem(16px);
+}
+
+四则运算
+表示涉及带数值的样式设置时,可直接进行加减乘除运算 在代码块中直接就可以进行运算
+运算乘除时要先把单位拿出来 最后+单位
+```
+
+#### 判断
+
+```
+$show:true;
+$type:test;
+.demo{
+    @if @show{
+        color:red;
+    }
+    @else if $type==test{
+        color:yellow;
+    }
+    @else{
+        color:blue;
+    }
+}
+三目运算  即 三元运算
+.demo{
+    color:if(true,1px,2px);   // color:1px   真选择1px 假即2px
+}
+```
+
+#### 循环
+
+```
+//  相当于定义变量i  起始值为1 小于等于3 然后循环
+@for $i from 1 through 3{
+  .through-#{$i}{
+    width: 2em * $i;
+  }
+}
+
+// 相当于定义 i初始值为1  小于3
+@for $i from 1 to 3{
+  .to#{$i}{
+    height: 2em * $i;
+  }
+}
+
+// 一维数组
+$arr:red,yellow,blue;
+// 二维数组
+$brr:(a1,a2,a3),(a4,a5,a6);
+// map对象格式
+$map:(key1:value1,key2:value2);
+
+//$each 遍历  将一个个元素拿出来循环
+@each $val in $arr{
+  .#{$val}-icon{
+    background-image: url('/image/#{$val}.jpg');
+  }
+}
+
+// 多维数组遍历
+$arr:(a,b,c,d),(e,f,g,h),(i,j,k,o);
+// 当声明一个变量时   三个数组 每个都是这个变量
+// 当声明的变量等于每个数组元素的个数的时候 第一个变量的是每个数组的第一个元素 以此类推
+@each $v1 in $arr{
+  .#{$v1}{
+    text:$v1;
+  }
+}
+
+// map对象遍历
+@each $key,$val in $map{
+    #{$key}{
+        font-size:$val;
+    }
+}
+
+```
+
+#### 变量
+
+> 在外部声明的变量默认为全局变量 在代码块内部声明的变量的默认为局部变量 可以将局部转全局 在声明的变量后面 $width:10px !global;
+
+
+
+
+
