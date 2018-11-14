@@ -23,6 +23,8 @@ tags:
 > 我的源是腾讯云的默认源,发现安装不了东西，随即我便去修改成了阿里云
 > sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup 备份原始文件
 > vi /etc/apt/sources.list 修改文件并添加国内源
+
+
 ```
 deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
 
@@ -43,6 +45,7 @@ deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted unive
 deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
 
 deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+
 ```
 
 然后update->install shadowsocks  默认ubuntu16.04以上好像就可以直接安装 
@@ -52,8 +55,12 @@ sudo apt-get install m2crypto
 pip install shadowsocks   利用pip去安装shadowsocks
 
 3. 修改shadowsocks配置文件
+
 > 安装了shadowsocks 配置文件在 /etc/shadowsocks/config.json
+
 文件内容如下
+
+
 ```
 {
     "server":"0.0.0.0",                  // 所有ip都可以访问
