@@ -1,10 +1,10 @@
 ---
 layout:     post
 title:      "令人困惑的strtotime"
-subtitle:   "有有意思的小坑"
+subtitle:   "有意思的小坑"
 date:       2018-12-04 14:00:00
 author:     "憧憬"
-header-img: "img/in-post/post-bg-halting.jpg"
+header-img: "img/post-bg-halting.jpg"
 header-mask: 0.3
 catalog:    true
 tags:
@@ -61,3 +61,5 @@ var_dump(date("Y-m-d", strtotime("last day of last month", strtotime("2017-03-31
 
 现在, 搞清楚了内部原理, 是不是就不慌了?  🙂
 
+转载自鸟哥博客 觉得这个非常有意思 希望做个笔记 
+<a href="http://www.laruence.com/2018/07/31/3207.html">Yuan</a> 
