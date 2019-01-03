@@ -2,7 +2,7 @@
 layout:     post
 title:      "redis消息订阅"
 subtitle:   "如果你需要一个简单发布/订阅 机制的消息队列"
-date:       2018-11-26 20:00:00
+date:       2019-01-03 14:00:00
 author:     "憧憬"
 header-img: "img/in-post/post-linux-pd/redis.png"
 header-mask: 0.3
