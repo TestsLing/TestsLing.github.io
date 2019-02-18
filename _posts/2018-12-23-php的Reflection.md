@@ -8,7 +8,7 @@ header-img: "img/post-bg-alibaba.jpg"
 header-mask: 0.3
 catalog:    true
 tags:
-  - PHP
+  - php
 ---
 
 ## 反射
