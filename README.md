@@ -1,4 +1,7 @@
 # TestsLing.github.io
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/TestsLing/TestsLing.github.io.svg)](https://greenkeeper.io/)
+
 Longing Blog
 
 个人博客，经常性更新学习资料
