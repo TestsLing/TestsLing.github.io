@@ -6,6 +6,4 @@ Longing Blog
 相互学习，不正望指出
 
 
-testSmile Mod
-
-test1 Mod
+[![TestsLing's github stats](https://github-readme-stats.vercel.app/api?username=TestsLing)](https://github.com/anuraghazra/github-readme-stats)
